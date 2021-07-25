@@ -4,14 +4,9 @@ header('Content-Type: text/html; charset=utf-8');
 
 session_start();
 
-if(!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['message']) and !empty($_POST['captcha'])){
+if(!empty($_POST['name']) and !empty($_POST['email']) and !empty($_POST['message'])){
 	
-	if($_POST['captcha']!=$_SESSION['captcha']){
-		die('Code captcha not works');
-		$input = $_POST;
-	}else{
 		$email_odbiorcy = 'fridaycmg@gmail.com';
-		
 		$header = 'Reply-To: <'.$_POST['email']."> \r\n"; 
 		$header .= "MIME-Version: 1.0 \r\n"; 
 		$header .= "Content-Type: text/html; charset=UTF-8"; 
