@@ -38,3 +38,15 @@ function setTheme(mode){
 
 	localStorage.setItem('theme', mode)
 }
+
+
+// When the user scrolls down 20px from the top of the document, slide down the navbar
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("s1").style.top = "0";
+  } else {
+    document.getElementById("s1").style.top = "-50px";
+  }
+}
